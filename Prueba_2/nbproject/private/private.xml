@@ -3,10 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/Taller%20Spring/Prueba_2/web/WEB-INF/jsp/categoriaAdd.jsp</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/Taller%20Spring/Prueba_2/src/java/controller/categoriaController.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/Taller%20Spring/Prueba_2/web/WEB-INF/jsp/categorias.jsp</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/Taller%20Spring/Prueba_2/web/WEB-INF/dispatcher-servlet.xml</file>
+            <file>file:/C:/Users/DELL/Documents/IGF115_proyecto2/Prueba_2/src/java/modelos/Videojuego.java</file>
+            <file>file:/C:/Users/DELL/Documents/IGF115_proyecto2/Prueba_2/src/java/controller/videojuego/addController.java</file>
+            <file>file:/C:/Users/DELL/Documents/IGF115_proyecto2/Prueba_2/web/WEB-INF/jsp/VJadd.jsp</file>
         </group>
     </open-files>
 </project-private>

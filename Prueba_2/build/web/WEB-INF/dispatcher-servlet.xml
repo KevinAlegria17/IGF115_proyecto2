@@ -25,6 +25,7 @@
                 <prop key="categorias.htm">categoriaController</prop>
                 <prop key="deleteCat.htm">categoriaController</prop>
                 <prop key="categoriaAdd.htm">categoriaController</prop>
+                <prop key="categoriaVer.htm">categoriaController</prop>
                 <prop key="consolas.htm">consolaController</prop>
                 
                 <prop key="VJadd.htm">addController</prop>

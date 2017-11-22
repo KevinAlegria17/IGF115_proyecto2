@@ -34,6 +34,17 @@ public class categoriaController {
         mav.addObject("datos",datos);
         return mav;
     }
+    
+    @RequestMapping(value="categoriaVer.htm", method=RequestMethod.GET)
+    public ModelAndView categoriaVer(HttpServletRequest request){
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("categoriaVer");
+        int id=Integer.parseInt(request.getParameter("id"));
+        String sql ="select * from categoria where id=?";
+        List categorias = this.jdbcTemplate.queryForList(sql, id);
+        mav.addObject("categorias",categorias);
+        return mav;
+    }
 
     @RequestMapping(value="deleteCat.htm",method=RequestMethod.GET)
     public ModelAndView form(HttpServletRequest request){

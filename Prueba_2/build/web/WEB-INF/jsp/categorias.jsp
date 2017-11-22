@@ -29,6 +29,7 @@
                             <th><c:out value="${dato.id}"/></th>
                             <th><c:out value="${dato.nombre}"/></th>
                             <th><c:out value="${dato.codigo}"/></th>
+                            <th><a href="<c:url value="categoriaVer.htm?id=${dato.id}"/>" class="btn btn-warning">Ver</a></th>
                             <th><a href="<c:url value="deleteCat.htm?id=${dato.id}"/>" class="btn btn-danger">Eliminar</a></th>
                         </tr>
                     </c:forEach>
