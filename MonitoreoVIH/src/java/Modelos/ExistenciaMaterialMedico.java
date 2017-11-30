@@ -5,7 +5,7 @@ import java.util.Date;
 public class ExistenciaMaterialMedico {
     private Integer id;
     private Integer codigo;
-    private Date fechaConteo;
+    private String fechaConteo;
     private Integer cantidadExistencia;
     private Integer cantidadFaltante;
     private String observacion;
@@ -13,7 +13,7 @@ public class ExistenciaMaterialMedico {
     public ExistenciaMaterialMedico() {
     }
 
-    public ExistenciaMaterialMedico(Integer id, Integer codigo, Date fechaConteo, Integer cantidadExistencia, Integer cantidadFaltante, String observacion) {
+    public ExistenciaMaterialMedico(Integer id, Integer codigo, String fechaConteo, Integer cantidadExistencia, Integer cantidadFaltante, String observacion) {
         this.id = id;
         this.codigo = codigo;
         this.fechaConteo = fechaConteo;
@@ -38,11 +38,11 @@ public class ExistenciaMaterialMedico {
         this.codigo = codigo;
     }
 
-    public Date getFechaConteo() {
+    public String getFechaConteo() {
         return fechaConteo;
     }
 
-    public void setFechaConteo(Date fechaConteo) {
+    public void setFechaConteo(String fechaConteo) {
         this.fechaConteo = fechaConteo;
     }
 

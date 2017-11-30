@@ -12,11 +12,11 @@ public class TAR extends ExistenciaMaterialMedico {
     public TAR() {
     }
 
-    public TAR(Integer id, Integer codigo, Date fechaConteo, Integer cantidadExistencia, Integer cantidadFaltante, String observacion) {
+    public TAR(Integer id, Integer codigo, String fechaConteo, Integer cantidadExistencia, Integer cantidadFaltante, String observacion) {
         super(id, codigo, fechaConteo, cantidadExistencia, cantidadFaltante, observacion);
     }
 
-    public TAR(Integer id, Integer idLineaNivel, String nombreComercial, String accionFarmacologica, Integer idExist, Integer codigo, Date fechaConteo, Integer cantidadExistencia, Integer cantidadFaltante, String observacion) {
+    public TAR(Integer id, Integer idLineaNivel, String nombreComercial, String accionFarmacologica, Integer idExist, Integer codigo, String fechaConteo, Integer cantidadExistencia, Integer cantidadFaltante, String observacion) {
         super(idExist, codigo, fechaConteo, cantidadExistencia, cantidadFaltante, observacion);
         this.id = id;
         this.idExistencia = idExist;

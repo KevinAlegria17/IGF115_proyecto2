@@ -20,8 +20,15 @@
         <property name="mappings">
             <props>
                 <prop key="index.htm">indexController</prop>
+                
                 <prop key="MaterialLaboratorioAdd.htm">LaboratorioController</prop>
+                <prop key="Laboratorios.htm">LaboratorioController</prop>
                 <prop key="LaboratorioAdd.htm">LaboratorioController</prop>
+                <prop key="LaboratorioVer.htm">LaboratorioController</prop>
+                <prop key="LaboratorioEliminar.htm">LaboratorioController</prop>
+                <prop key="Prueba000.htm">LaboratorioController</prop>
+                
+                
                 <prop key="MaterialTarAdd.htm">TarController</prop>
                 <prop key="TarAdd.htm">TarController</prop>
                 

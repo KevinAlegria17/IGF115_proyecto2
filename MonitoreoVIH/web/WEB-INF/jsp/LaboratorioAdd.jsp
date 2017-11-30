@@ -10,36 +10,41 @@
     </head>
     <body>
         <h1>Hola desde Añadir Material de laboratorio</h1>
-        <a href="">Regresar a Home</a>
+        <br>
+        <a href="<c:url value="index.htm"/>">Regresar a Home</a>
+        <br>
+        <a href="<c:url value="MaterialLaboratorioAdd.htm"/>">Regresar a ingreso de material </a>
+        <br>
         <div style="text-align:center;">
-        <form:form method="post" commandName="material-lab" >
-            <p>
-                <form:label path="id">ID:</form:label>
-                <form:input path="id" />
-                <form:errors path="id" element="div" cssClass="alert alert-danger"/>
-            
-            </p>
-            <p>
-                <form:label path="tipoFabricacion">Tipo de fabricacion:</form:label>
-                <form:input path="tipoFabricacion" />
-                <form:errors path="tipoFabricacion" element="div" cssClass="alert alert-danger"/>
-            
-            </p>
-            <p>
-                <form:label path="uso">Uso:</form:label>
-                <form:input path="uso" />
-                <form:errors path="uso" element="div" cssClass="alert alert-danger"/>
-            
-            </p>
-            <p>
-                <form:label path="formaPresentacion">Forma de Presentacion:</form:label>
-                <form:input path="formaPresentacion" />
-                <form:errors path="formaPresentacion" element="div" cssClass="alert alert-danger"/>
-            
-            </p>
-            <hr/>
-            <form:button class="btn btn-primary">Añadir Material de laboratorio</form:button>
-        </form:form>
+            <form:form method="post" commandName="material-lab" >
+                <p>
+                    <form:label path="id">ID:</form:label>
+                    <form:input path="id" />
+                    <form:errors path="id" element="div" cssClass="alert alert-danger"/>
+
+                </p>
+                <p>
+                    <form:label path="tipoFabricacion">Tipo de fabricacion:</form:label>
+                    <form:input path="tipoFabricacion" />
+                    <form:errors path="tipoFabricacion" element="div" cssClass="alert alert-danger"/>
+
+                </p>
+                <p>
+                    <form:label path="uso">Uso:</form:label>
+                    <form:input path="uso" />
+                    <form:errors path="uso" element="div" cssClass="alert alert-danger"/>
+
+                </p>
+                <p>
+                    <form:label path="formaPresentacion">Forma de Presentacion:</form:label>
+                    <form:input path="formaPresentacion" />
+                    <form:errors path="formaPresentacion" element="div" cssClass="alert alert-danger"/>
+
+                </p>
+                <hr/>
+                <form:button class="btn btn-primary">Añadir Material de laboratorio</form:button>
+            </form:form>
+            <h1><c:out value="${respuesta}"/></h1>
         </div>
     </body>
 </html>

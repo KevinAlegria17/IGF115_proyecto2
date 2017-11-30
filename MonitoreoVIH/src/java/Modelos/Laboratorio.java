@@ -11,13 +11,20 @@ public class Laboratorio extends ExistenciaMaterialMedico {
 
     public Laboratorio() {
     }
-    
 
-    public Laboratorio(Integer id, Integer codigo, Date fechaConteo, Integer cantidadExistencia, Integer cantidadFaltante, String observacion) {
+    public Laboratorio(Integer id, Integer idExistencia, String tipoFabricacion, String uso, String formaPresentacion) {
+        this.id = id;
+        this.idExistencia = idExistencia;
+        this.tipoFabricacion = tipoFabricacion;
+        this.uso = uso;
+        this.formaPresentacion = formaPresentacion;
+    }
+    
+    public Laboratorio(Integer id, Integer codigo, String fechaConteo, Integer cantidadExistencia, Integer cantidadFaltante, String observacion) {
         super(id, codigo, fechaConteo, cantidadExistencia, cantidadFaltante, observacion);
     }
 
-    public Laboratorio(Integer id, String tipoFabricacion, String uso, String formaPresentacion, Integer idExist, Integer codigo, Date fechaConteo, Integer cantidadExistencia, Integer cantidadFaltante, String observacion) {
+    public Laboratorio(Integer id, String tipoFabricacion, String uso, String formaPresentacion, Integer idExist, Integer codigo, String fechaConteo, Integer cantidadExistencia, Integer cantidadFaltante, String observacion) {
         super(idExist, codigo, fechaConteo, cantidadExistencia, cantidadFaltante, observacion);
         this.id = id;
         this.idExistencia = idExist;

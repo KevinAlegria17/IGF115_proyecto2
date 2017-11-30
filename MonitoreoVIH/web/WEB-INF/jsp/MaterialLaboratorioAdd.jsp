@@ -10,7 +10,7 @@
     </head>
     <body>
         <h1>Hola desde Añadir Material</h1>
-        <a href="">Regresar a Home</a>
+        <a href="<c:url value="index.htm"/>">Regresar a Home</a>
         <div style="text-align:center;">
         <form:form method="post" commandName="existencia" >
             <p>
@@ -27,7 +27,7 @@
             </p>
             <p>
                 <form:label path="fechaConteo">Fecha Conteo</form:label>
-                <form:input path="fechaConteo" />
+                <form:input path="fechaConteo" type="date"/>
                 <form:errors path="fechaConteo" element="div" cssClass="alert alert-danger"/>
             
             </p>

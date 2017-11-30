@@ -5,7 +5,12 @@ import Modelos.Conectar;
 import Modelos.ExistenciaMaterialMedico;
 import Modelos.Laboratorio;
 import Modelos.TAR;
+import componentes.DefinicionComponenteMaterial;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -59,21 +64,23 @@ public class TarController {
                              SessionStatus status
             )
     {
-            this.jdbcTemplate.update(
-                    "insert into existenciamaterialmedico "
-                    + "(ID_EXIST, CODIGO_EXIST, FECHACONTEO, CANTIDADEXISTENCIA, CANTIDADFALTANTE, OBSERVACION)"
-                    + "values (?,?,?,?,?,?);",
-                    existencia.getId(), existencia.getCodigo(), existencia.getFechaConteo(), 
-                    existencia.getCantidadExistencia(), existencia.getCantidadFaltante(), existencia.getObservacion()
-            );
-            this.jdbcTemplate.update(
-                    "insert into existenciatar "
-                    + "(NOMBRECOMERCIAL, ACCIONFARMACOLOGICA, ID_TAR, ID_EXIST, ID_LINEA)"
-                    + "values (?,?,?,?,?);",
-                    tar.getNombreComercial(), tar.getAccionFarmacologica(), tar.getId(),
-                    existencia.getId(), tar.getIdLineaNivel()
-            );
-            
-            return new ModelAndView("redirect:/index.htm");
+                ModelAndView mav = new ModelAndView();
+                mav.setViewName("TarAdd");
+                try {
+                    Registry registry = LocateRegistry.getRegistry("localhost", 8000);
+                    DefinicionComponenteMaterial definicionMaterial = (DefinicionComponenteMaterial) registry.lookup("material");
+                    
+                    String response = definicionMaterial.insertartar(
+                            existencia.getId(), existencia.getCodigo(), existencia.getFechaConteo(), 
+                            existencia.getCantidadExistencia(), existencia.getCantidadFaltante(), existencia.getObservacion(),
+                            tar.getId(), tar.getIdLineaNivel(), tar.getNombreComercial(),tar.getAccionFarmacologica()
+                    );
+                      mav.addObject("respuesta",response);
+                } catch (Exception ex) {
+                    Logger.getLogger("Error");
+                    String respuesta= "Servicio no disponible \n" + ex.toString();
+                    mav.addObject("respuesta", respuesta);
+                }
+            return mav;
     }
 }

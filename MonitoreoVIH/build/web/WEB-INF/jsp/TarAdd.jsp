@@ -10,42 +10,44 @@
     </head>
     <body>
         <h1>Hola desde Añadir Material TAR</h1>
-        <a href="">Regresar a Home</a>
+        <a href="<c:out value="index.htm"/>">Regresar a Home</a>
         <div style="text-align:center;">
-        <form:form method="post" commandName="material-tar" >
-            <p>
-                <form:label path="id">ID:</form:label>
-                <form:input path="id" />
-                <form:errors path="id" element="div" cssClass="alert alert-danger"/>
-            
-            </p>
-            <p>
-                <form:label path="idLineaNivel">Linea de Nivel:</form:label>
-                <form:select path="idLineaNivel">
-                    <form:option value="0">Seleccione... </form:option>
-                    <c:forEach items="${lineas}" var="linea">
-                    <form:option value="${linea.ID_LINEA}"><c:out value="${linea.NOMBRE_LINEA}"/></form:option>
-                    </c:forEach>
-                </form:select>
-                <form:errors path="idLineaNivel" element="div" cssClass="alert alert-danger"/>
-            
-            </p>
-            
-            <p>
-                <form:label path="nombreComercial">Nombre Comercial:</form:label>
-                <form:input path="nombreComercial" />
-                <form:errors path="nombreComercial" element="div" cssClass="alert alert-danger"/>
-            
-            </p>
-            <p>
-                <form:label path="accionFarmacologica">Accion Farmacologica:</form:label>
-                <form:input path="accionFarmacologica" />
-                <form:errors path="accionFarmacologica" element="div" cssClass="alert alert-danger"/>
-            
-            </p>
-            <hr/>
-            <form:button class="btn btn-primary">Añadir Material TAR</form:button>
-        </form:form>
+            <form:form method="post" commandName="material-tar" >
+                <p>
+                    <form:label path="id">ID:</form:label>
+                    <form:input path="id" />
+                    <form:errors path="id" element="div" cssClass="alert alert-danger"/>
+
+                </p>
+                <p>
+                    <form:label path="idLineaNivel">Linea de Nivel:</form:label>
+                    <form:select path="idLineaNivel">
+                        <form:option value="0">Seleccione... </form:option>
+                        <c:forEach items="${lineas}" var="linea">
+                            <form:option value="${linea.ID_LINEA}"><c:out value="${linea.NOMBRE_LINEA}"/></form:option>
+                        </c:forEach>
+                    </form:select>
+                    <form:errors path="idLineaNivel" element="div" cssClass="alert alert-danger"/>
+
+                </p>
+
+                <p>
+                    <form:label path="nombreComercial">Nombre Comercial:</form:label>
+                    <form:input path="nombreComercial" />
+                    <form:errors path="nombreComercial" element="div" cssClass="alert alert-danger"/>
+
+                </p>
+                <p>
+                    <form:label path="accionFarmacologica">Accion Farmacologica:</form:label>
+                    <form:input path="accionFarmacologica" />
+                    <form:errors path="accionFarmacologica" element="div" cssClass="alert alert-danger"/>
+
+                </p>
+                <hr/>
+                <form:button class="btn btn-primary">Añadir Material TAR</form:button>
+            </form:form>
+
+                <h2><c:out value="${respuesta}"/></h2>
         </div>
     </body>
 </html>
