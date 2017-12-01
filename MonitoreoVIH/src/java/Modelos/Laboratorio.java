@@ -1,7 +1,5 @@
 package Modelos;
 
-import java.util.Date;
-
 public class Laboratorio extends ExistenciaMaterialMedico {
     private Integer id;
     private Integer idExistencia;

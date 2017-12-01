@@ -26,7 +26,7 @@
                 <prop key="LaboratorioAdd.htm">LaboratorioController</prop>
                 <prop key="LaboratorioVer.htm">LaboratorioController</prop>
                 <prop key="LaboratorioEliminar.htm">LaboratorioController</prop>
-                <prop key="Prueba000.htm">LaboratorioController</prop>
+                <prop key="LaboratorioEditar.htm">LaboratorioController</prop>
                 
                 
                 <prop key="MaterialTarAdd.htm">TarController</prop>

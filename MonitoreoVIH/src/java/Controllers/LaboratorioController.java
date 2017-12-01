@@ -78,27 +78,6 @@ public class LaboratorioController {
         return mav;
     }
 
-    /*
-    @RequestMapping(value="LaboratorioVer.htm",method=RequestMethod.GET)
-    public ModelAndView laboratorioVer(){
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("LaboratorioVer");
-        String error ="Error encontrado";
-        try {
-                    Registry registry = LocateRegistry.getRegistry("localhost", 8000);
-                    DefinicionComponenteMaterial definicionMaterial = (DefinicionComponenteMaterial) registry.lookup("material");
-                    error+="Antes de crear lista";
-                    List lista = definicionMaterial.verMaterialesLaboratorio();
-                    error+="Olvidalo XD";
-                    mav.addObject("resultado",lista);
-                } catch (Exception ex) {
-                    Logger.getLogger("Error");
-                    String respuesta="Servicio no disponible \n"+ error + ex.toString();
-                    mav.addObject("respuesta", respuesta);
-                }
-        return mav;
-    }
-     */
     @RequestMapping(value = "Laboratorios.htm", method = RequestMethod.GET)
     public ModelAndView Laboratorios() {
         ModelAndView mav = new ModelAndView();
@@ -106,13 +85,6 @@ public class LaboratorioController {
         String sql = "select * from existencialaboratorio";
         List laboratorios = this.jdbcTemplate.queryForList(sql);
         mav.addObject("laboratorios", laboratorios);
-        return mav;
-    }
-
-    @RequestMapping(value = "Prueba000.htm", method = RequestMethod.GET)
-    public ModelAndView prueba000() {
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("Prueba000");
         return mav;
     }
 
@@ -133,14 +105,14 @@ public class LaboratorioController {
         }
         return mav;
     }
-    
+
     @RequestMapping(value = "LaboratorioEliminar.htm", method = RequestMethod.GET)
     public ModelAndView LaboratorioEliminar(HttpServletRequest request) {
         ModelAndView mav = new ModelAndView();
         int id = Integer.parseInt(request.getParameter("id"));
         mav.setViewName("LaboratorioEliminar");
         //LLAMAR AL COMPONENTE PARA QUE ELIMINE
-            try {
+        try {
             Registry registry = LocateRegistry.getRegistry("localhost", 8000);
             DefinicionComponenteMaterial definicionMaterial = (DefinicionComponenteMaterial) registry.lookup("material");
             String respuesta = definicionMaterial.Eliminar(id);
@@ -153,4 +125,59 @@ public class LaboratorioController {
         return mav;
     }
 
+    @RequestMapping(value = "LaboratorioEditar.htm", method = RequestMethod.GET)
+    public ModelAndView laboratorioEditar(HttpServletRequest request) {
+        ModelAndView mav = new ModelAndView();
+        int id = Integer.parseInt(request.getParameter("id"));
+        mav.setViewName("LaboratorioEditar");
+        try {
+            Registry registry = LocateRegistry.getRegistry("localhost", 8000);
+            DefinicionComponenteMaterial definicionMaterial = (DefinicionComponenteMaterial) registry.lookup("material");
+            String response[] = definicionMaterial.consultaIndividual(id);
+            String idExist = response[0];
+            System.out.print("LLega bien hasta aca");
+            int idExist2 = Integer.parseInt(idExist);
+            String idLab = response[1];
+            int idLab2 = Integer.parseInt(idLab);
+            String tipoFabricacion = response[2];
+            String uso = response[3];
+            String formaPresentacion = response[4];
+            Laboratorio lab = new Laboratorio(id, idExist2, tipoFabricacion, uso, formaPresentacion);
+            mav.addObject("material", lab);
+        } catch (Exception ex) {
+            Logger.getLogger("Error");
+            String respuesta = "Servicio no disponible \n" + ex.toString();
+            mav.addObject("respuestaerror", respuesta);
+        }
+        return mav;
+    }
+    
+    @RequestMapping(value = "LaboratorioEditar.htm", method = RequestMethod.POST)
+    public ModelAndView laboratorioEditarPost(@ModelAttribute("material") Laboratorio lab,
+            BindingResult result,
+            SessionStatus status
+    ) {
+        String id = lab.getUso();
+        String id2 = lab.getFormaPresentacion();
+        String id3 = lab.getTipoFabricacion();
+        //int id4 = lab.getId();
+        
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("LaboratorioEditarExito");
+        try {
+            Registry registry = LocateRegistry.getRegistry("localhost", 8000);
+            DefinicionComponenteMaterial definicionMaterial = (DefinicionComponenteMaterial) registry.lookup("material");
+            String response = definicionMaterial.Actualizar(
+                    lab.getId(), lab.getIdExistencia(), lab.getTipoFabricacion(),
+                    lab.getUso(), lab.getFormaPresentacion()
+            );
+            mav.addObject("respuestaEditar", response);
+        } catch (Exception ex) {
+            Logger.getLogger("Error");
+            String respuesta = "Servicio no disponible \n "+id+id2+id3+ ex.toString();
+            mav.addObject("respuestaerror", respuesta);
+        }
+        return mav;
+    }
 }
+    

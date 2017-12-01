@@ -118,6 +118,30 @@ public class ComponenteMaterial implements DefinicionComponenteMaterial, Seriali
     }
     
     @Override
+    public String Actualizar(int id, int idExist, String tipo, String uso, String presentacion) throws RemoteException{
+        Conectar con= new Conectar();
+        String respuesta = null;
+        try {
+            String consulta= "UPDATE existencialaboratorio SET "
+                    + "ID_LABORATORIO="+id+", TIPOFABRICACION="+tipo+", USO="+uso+", FORMAPRESENTACION="+presentacion 
+                    + "WHERE ID_LABORATORIO="+id;
+                    
+            PreparedStatement prepStatement = con.getConn().prepareStatement(consulta);
+            prepStatement.executeUpdate();
+            con.getConn().close();
+            respuesta = "\n Material De laboratorio con id "+id+" ...actualizado correctamente!";
+            System.out.print("Actualizado correctamente");
+            return respuesta;
+            
+        } catch (SQLException ex) {
+            respuesta = "\nFallo en el proceso "+ex.toString()+"";
+            System.out.print("Fallo en la actualizacion");
+            return respuesta;
+            
+        }
+    }
+    
+    @Override
     public List verMaterialesLaboratorio() throws RemoteException{
         Conectar con = new Conectar();
         List<Laboratorio> lista = new ArrayList<Laboratorio>();

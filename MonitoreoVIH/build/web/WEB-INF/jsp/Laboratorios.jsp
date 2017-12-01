@@ -56,10 +56,12 @@
             <div class="jumbotron">
                 <div class="container">
                     <h1 class="display-4">Mostrando materiales de laboratorio...</h1>
-                    <br><br><br>
+                    <br><br>
                     <div style="text-align: center">
                         <div>
-                            <table class="table table-bordered  table-dark">
+                            <a href="<c:url value="/MaterialLaboratorioAdd.htm"/>" class="btn btn-outline-primary">Añadir Material</a>
+                            <br><br>
+                            <table class="table table-bordered table-dark">
                                 <thead class="thead-dark">
                                     <tr>
                                         <th>ID</th>
@@ -85,8 +87,8 @@
                                 </tbody>
                             </table>
                         </div>
-                        <br><br><br>
-                        <p><a class="btn btn-success btn-lg" href="<c:out value="index.htm"/>" role="button">Regresar a la pagina principal </a></p>
+                        <br><br>
+                        <p><a class="btn btn-outline-success btn-lg" href="<c:out value="index.htm"/>" role="button">Regresar a la pagina principal </a></p>
                     </div>
                 </div>
             </div>

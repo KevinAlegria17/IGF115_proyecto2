@@ -3,7 +3,6 @@ package componentes;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import java.sql.ResultSet;
 import java.util.List;
 
 
@@ -27,15 +26,7 @@ public interface DefinicionComponenteMaterial extends Remote{
     public String[] consultaIndividual(int id) throws RemoteException;
     
     public String Eliminar(int id) throws RemoteException;
-    // Aca deben de ir los demas metodos/procesos que hara este componente
     
-    /*
-    private Integer id;
-    private Integer idExistencia;
-    private Integer idLineaNivel;
-    private String nombreComercial;
-    private String accionFarmacologica;
-    */
-    
-    //public String insertarjuego(String consulta) throws RemoteException;
+    public String Actualizar(int id, int idExist, String tipo, String uso, String presentacion) throws RemoteException;
+
 }
