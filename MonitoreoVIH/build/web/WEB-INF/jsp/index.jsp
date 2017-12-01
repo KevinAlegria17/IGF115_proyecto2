@@ -67,7 +67,7 @@
                             <figcaption class="figure-caption">A caption for the above image.</figcaption>
                         </figure>
                         <h2>Acceder al modulo de Planificaciones</h2>
-                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                        <p><a class="btn btn-outline-success" href="#" role="button">Ir al modulo &raquo;</a></p>
                     </div>
                     <div class="col-md-3">
                         <figure class="figure">
@@ -75,7 +75,7 @@
                             <figcaption class="figure-caption">A caption for the above image.</figcaption>
                         </figure>
                         <h2>Acceder a la gestion de personal</h2>
-                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                        <p><a class="btn btn-outline-success" href="#" role="button">Ir al modulo &raquo;</a></p>
                     </div>
                     <div class="col-md-3">
                         <figure class="figure">
@@ -83,7 +83,7 @@
                             <figcaption class="figure-caption">A caption for the above image.</figcaption>
                         </figure>
                         <h2>Ver Materiales Laboratorio</h2>
-                        <p><a class="btn btn-secondary" href="<c:url value="Laboratorios.htm"/>" role="button">View details &raquo;</a></p>
+                        <p><a class="btn btn-outline-success" href="<c:url value="Laboratorios.htm"/>" role="button">Ir al modulo &raquo;</a></p>
                     </div>
                     <div class="col-md-3">
                         <figure class="figure">
@@ -91,7 +91,7 @@
                             <figcaption class="figure-caption">A caption for the above image.</figcaption>
                         </figure>
                         <h2>Ver protocolos almacenados en la web</h2>
-                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                        <p><a class="btn btn-outline-success" href="#" role="button">Ir al modulo &raquo;</a></p>
                     </div>
                 </div>
 
