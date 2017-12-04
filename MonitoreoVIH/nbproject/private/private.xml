@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/DELL/Documents/IGF115_proyecto2/MonitoreoVIH/web/WEB-INF/jsp/index.jsp</file>
-            <file>file:/C:/Users/DELL/Documents/IGF115_proyecto2/MonitoreoVIH/src/java/Controllers/LaboratorioController.java</file>
-            <file>file:/C:/Users/DELL/Documents/IGF115_proyecto2/MonitoreoVIH/web/WEB-INF/jsp/Laboratorios.jsp</file>
-            <file>file:/C:/Users/DELL/Documents/IGF115_proyecto2/MonitoreoVIH/web/WEB-INF/jsp/LaboratorioEditar.jsp</file>
+            <file>file:/C:/Users/DELL/Documents/IGF115_proyecto2/MonitoreoVIH/src/java/Controllers/PersonalController.java</file>
+            <file>file:/C:/Users/DELL/Documents/IGF115_proyecto2/MonitoreoVIH/src/java/Modelos/Personal.java</file>
+            <file>file:/C:/Users/DELL/Documents/IGF115_proyecto2/MonitoreoVIH/web/WEB-INF/jsp/Personal/PersonalAdd.jsp</file>
+            <file>file:/C:/Users/DELL/Documents/IGF115_proyecto2/MonitoreoVIH/web/WEB-INF/dispatcher-servlet.xml</file>
         </group>
     </open-files>
 </project-private>

@@ -86,6 +86,20 @@
                                     </c:forEach>
                                 </tbody>
                             </table>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                     <c:forEach items="${laboratorioserror}" var="laboratorioerror">
+                                            <tr>
+                                                <th><c:out value="${laboratorioerror}"/></th>
+                                            </tr>
+                                     </c:forEach>
+                                </tbody>
+                            </table>
                         </div>
                         <br><br>
                         <p><a class="btn btn-outline-success btn-lg" href="<c:out value="index.htm"/>" role="button">Regresar a la pagina principal </a></p>

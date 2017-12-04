@@ -71,62 +71,17 @@ public class ComponenteMaterial implements DefinicionComponenteMaterial, Seriali
     }
     
     @Override
-    public String insertartar(
-            Integer id,Integer codigo,String fecha, 
-            Integer existencia,Integer faltante,String observacion,
-            Integer idTar,
-            Integer lineaNivel, String nombre, String accionFarmacologica
-    ) throws RemoteException 
-    {
-        Conectar con= new Conectar();
-        String respuesta =null;
-        try {
-            String consulta1= "insert into existenciamaterialmedico "
-                    + "(ID_EXIST, CODIGO_EXIST, FECHACONTEO, CANTIDADEXISTENCIA, CANTIDADFALTANTE, OBSERVACION)"
-                    + "values (?,?,?,?,?,?);";
-            PreparedStatement prepStatement = con.getConn().prepareStatement(consulta1);
-            prepStatement.setInt(1, id);
-            prepStatement.setInt(2, codigo);
-            prepStatement.setString(3, fecha);
-            prepStatement.setInt(4, existencia);
-            prepStatement.setInt(5, faltante);
-            prepStatement.setString(6, observacion);
-            prepStatement.executeUpdate();
-            
-            String consulta2= "insert into existenciatar "
-                    + "(NOMBRECOMERCIAL, ACCIONFARMACOLOGICA, ID_TAR, ID_EXIST, ID_LINEA)"
-                    + "values (?,?,?,?,?);";
-            PreparedStatement prepStatement2 = con.getConn().prepareStatement(consulta2);
-            prepStatement2.setString(1, nombre);
-            prepStatement2.setString(2, accionFarmacologica);
-            prepStatement2.setInt(3, idTar);
-            prepStatement2.setInt(4, id);
-            prepStatement2.setInt(5, lineaNivel);
-            prepStatement2.executeUpdate();
-            
-            con.getConn().close();
-            respuesta = "\n Material TAR: "+nombre+" ...insertado correctamente!";
-            
-        } catch (SQLException ex) {
-            respuesta = "\nFallo en el proceso"+ex.toString()+"";
-            
-        }
-        
-        System.out.print(respuesta);
-        return respuesta;
-        
-    }
-    
-    @Override
-    public String Actualizar(int id, int idExist, String tipo, String uso, String presentacion) throws RemoteException{
+    public String Actualizar(int id, String tipo, String uso, String presentacion) throws RemoteException{
         Conectar con= new Conectar();
         String respuesta = null;
         try {
-            String consulta= "UPDATE existencialaboratorio SET "
-                    + "ID_LABORATORIO="+id+", TIPOFABRICACION="+tipo+", USO="+uso+", FORMAPRESENTACION="+presentacion 
-                    + "WHERE ID_LABORATORIO="+id;
+            String consulta= "UPDATE existencialaboratorio SET TIPOFABRICACION=?, USO=?, FORMAPRESENTACION=? WHERE ID_LABORATORIO=?";
                     
             PreparedStatement prepStatement = con.getConn().prepareStatement(consulta);
+            prepStatement.setString(1, tipo);
+            prepStatement.setString(2, uso);
+            prepStatement.setString(3, presentacion);
+            prepStatement.setInt(4, id);
             prepStatement.executeUpdate();
             con.getConn().close();
             respuesta = "\n Material De laboratorio con id "+id+" ...actualizado correctamente!";

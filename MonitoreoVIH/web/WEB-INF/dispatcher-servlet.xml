@@ -21,16 +21,27 @@
             <props>
                 <prop key="index.htm">indexController</prop>
                 
-                <prop key="MaterialLaboratorioAdd.htm">LaboratorioController</prop>
                 <prop key="Laboratorios.htm">LaboratorioController</prop>
+                <prop key="MaterialLaboratorioAdd.htm">LaboratorioController</prop>
                 <prop key="LaboratorioAdd.htm">LaboratorioController</prop>
                 <prop key="LaboratorioVer.htm">LaboratorioController</prop>
-                <prop key="LaboratorioEliminar.htm">LaboratorioController</prop>
                 <prop key="LaboratorioEditar.htm">LaboratorioController</prop>
+                <prop key="LaboratorioEliminar.htm">LaboratorioController</prop>
                 
-                
+                <prop key="Tars.htm">TarController</prop>
                 <prop key="MaterialTarAdd.htm">TarController</prop>
                 <prop key="TarAdd.htm">TarController</prop>
+                <prop key="TarVer.htm">TarController</prop>
+                <prop key="TarEditar.htm">TarController</prop>
+                <prop key="TarEliminar.htm">TarController</prop>
+                
+                <prop key="Personals.htm">PersonalController</prop>
+                <prop key="PersonalVer.htm">PersonalController</prop>
+                <prop key="PersonalEliminar.htm">PersonalController</prop>
+                <prop key="PersonalEditar.htm">PersonalController</prop>
+                <prop key="PersonalAdd.htm">PersonalController</prop>
+                
+                
                 
             </props>
         </property>
@@ -50,5 +61,6 @@
     
     <bean name="LaboratorioController" class="Controllers.LaboratorioController"/>
     <bean name="TarController" class="Controllers.TarController"/>
+    <bean name="PersonalController" class="Controllers.PersonalController"/>
 
 </beans>

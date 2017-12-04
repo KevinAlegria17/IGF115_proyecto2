@@ -15,18 +15,7 @@
         <br>
         <div style="text-align:center;">
             <form:form method="POST" commandName="material" >
-                <p>
-                    <form:label path="id">ID de laboratorio:</form:label>
-                    <form:input path="id" disabled="true"/>
-                    <form:errors path="id" element="div" cssClass="alert alert-danger"/>
-
-                </p>
-                <p>
-                    <form:label path="idExistencia">ID de la existencia:</form:label>
-                    <form:input path="idExistencia" disabled="true"/>
-                    <form:errors path="idExistencia" element="div" cssClass="alert alert-danger"/>
-
-                </p>
+                
                 <p>
                     <form:label path="tipoFabricacion">Tipo de fabricacion:</form:label>
                     <form:input path="tipoFabricacion" />
