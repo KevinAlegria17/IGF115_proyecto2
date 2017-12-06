@@ -7,6 +7,7 @@ package Controllers;
 
 import Modelos.Conectar;
 import Modelos.Personal;
+import componentes.DefinicionComponentePersistencia;
 import componentes.DefinicionComponentePersonal;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -63,8 +64,8 @@ public class PersonalController {
         mav.setViewName("Personal/PersonalVer");
         try {
             Registry registry = LocateRegistry.getRegistry("localhost", 8000);
-            DefinicionComponentePersonal definicionPersonal = (DefinicionComponentePersonal) registry.lookup("personal");
-            String response[] = definicionPersonal.consultaIndividual(id);
+            DefinicionComponentePersistencia definicionPersistencia = (DefinicionComponentePersistencia) registry.lookup("persistencia");
+            String response[] = definicionPersistencia.ConsultaIndividualPersonal(id);
             mav.addObject("respuesta", response);
         } catch (Exception ex) {
             Logger.getLogger("Error");
@@ -82,8 +83,8 @@ public class PersonalController {
         //LLAMAR AL COMPONENTE PARA QUE ELIMINE
         try {
             Registry registry = LocateRegistry.getRegistry("localhost", 8000);
-            DefinicionComponentePersonal definicionPersonal = (DefinicionComponentePersonal) registry.lookup("personal");
-            String respuesta = definicionPersonal.Eliminar(id);
+            DefinicionComponentePersistencia definicionPersistencia = (DefinicionComponentePersistencia) registry.lookup("persistencia");
+            String respuesta = definicionPersistencia.EliminarPersonal(id);
             mav.addObject("respuestaEliminar", respuesta);
         } catch (Exception ex) {
             Logger.getLogger("Error");
@@ -100,8 +101,8 @@ public class PersonalController {
         mav.setViewName("Personal/PersonalEditar");
         try {
             Registry registry = LocateRegistry.getRegistry("localhost", 8000);
-            DefinicionComponentePersonal definicionPersonal = (DefinicionComponentePersonal) registry.lookup("personal");
-            String response[] = definicionPersonal.consultaIndividual(id);
+            DefinicionComponentePersistencia definicionPersistencia = (DefinicionComponentePersistencia) registry.lookup("persistencia");
+            String response[] = definicionPersistencia.ConsultaIndividualPersonal(id);
             String idArea = response[0];
             int idarea = Integer.parseInt(idArea);
             String areaPersonal = response[1];
@@ -131,8 +132,8 @@ public class PersonalController {
         mav.setViewName("Personal/PersonalEditarExito");
         try {
             Registry registry = LocateRegistry.getRegistry("localhost", 8000);
-            DefinicionComponentePersonal definicionPersonal = (DefinicionComponentePersonal) registry.lookup("personal");
-            String response = definicionPersonal.Actualizar(
+            DefinicionComponentePersistencia definicionPersistencia = (DefinicionComponentePersistencia) registry.lookup("persistencia");
+            String response = definicionPersistencia.ActualizarPersonal(
                     id, per.getArea(),
                     per.getCantidad_personal_disponible(), per.getPorcentaje()
             );
@@ -162,8 +163,8 @@ public class PersonalController {
         mav.setViewName("Personal/PersonalAdd");
         try {
             Registry registry = LocateRegistry.getRegistry("localhost", 8000);
-            DefinicionComponentePersonal definicionPersonal = (DefinicionComponentePersonal) registry.lookup("personal");
-            String response = definicionPersonal.insertarPersonal(
+            DefinicionComponentePersistencia definicionPersistencia = (DefinicionComponentePersistencia) registry.lookup("persistencia");
+            String response = definicionPersistencia.InsertarPersonal(
                     per.getId(), per.getArea(),
                     per.getCantidad_personal_disponible(), per.getPorcentaje()
             );

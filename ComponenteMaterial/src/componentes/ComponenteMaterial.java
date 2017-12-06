@@ -191,7 +191,7 @@ public class ComponenteMaterial implements DefinicionComponenteMaterial, Seriali
             Registry registry = LocateRegistry.createRegistry(8000);
             registry.bind("material", definicionMaterial);
             
-            System.out.print("Servidor esperando llamada");
+            System.out.print("Componente Material de laboratorio esperando llamada");
             
             
         } catch (Exception ex) {

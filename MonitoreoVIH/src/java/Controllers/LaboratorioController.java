@@ -4,6 +4,7 @@ import Modelos.Conectar;
 import Modelos.ExistenciaMaterialMedico;
 import Modelos.Laboratorio;
 import componentes.DefinicionComponenteMaterial;
+import componentes.DefinicionComponentePersistencia;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.ArrayList;
@@ -63,9 +64,9 @@ public class LaboratorioController {
         mav.setViewName("Laboratorio/LaboratorioAdd");
         try {
             Registry registry = LocateRegistry.getRegistry("localhost", 8000);
-            DefinicionComponenteMaterial definicionMaterial = (DefinicionComponenteMaterial) registry.lookup("material");
+            DefinicionComponentePersistencia definicionPersistencia = (DefinicionComponentePersistencia) registry.lookup("persistencia");
 
-            String response = definicionMaterial.insertarlab(
+            String response = definicionPersistencia.InsertarLab(
                     existencia.getId(), existencia.getCodigo(), existencia.getFechaConteo(),
                     existencia.getCantidadExistencia(), existencia.getCantidadFaltante(), existencia.getObservacion(),
                     lab.getId(), lab.getTipoFabricacion(), lab.getUso(), lab.getFormaPresentacion()
@@ -107,8 +108,8 @@ public class LaboratorioController {
         mav.setViewName("Laboratorio/LaboratorioVer");
         try {
             Registry registry = LocateRegistry.getRegistry("localhost", 8000);
-            DefinicionComponenteMaterial definicionMaterial = (DefinicionComponenteMaterial) registry.lookup("material");
-            String response[] = definicionMaterial.consultaIndividual(id);
+            DefinicionComponentePersistencia definicionPersistencia = (DefinicionComponentePersistencia) registry.lookup("persistencia");
+            String response[] = definicionPersistencia.ConsultaIndividualLab(id);
             mav.addObject("respuesta", response);
         } catch (Exception ex) {
             Logger.getLogger("Error");
@@ -126,8 +127,8 @@ public class LaboratorioController {
         //LLAMAR AL COMPONENTE PARA QUE ELIMINE
         try {
             Registry registry = LocateRegistry.getRegistry("localhost", 8000);
-            DefinicionComponenteMaterial definicionMaterial = (DefinicionComponenteMaterial) registry.lookup("material");
-            String respuesta = definicionMaterial.Eliminar(id);
+            DefinicionComponentePersistencia definicionPersistencia = (DefinicionComponentePersistencia) registry.lookup("persistencia");
+            String respuesta = definicionPersistencia.EliminarLab(id);
             mav.addObject("respuestaEliminar", respuesta);
         } catch (Exception ex) {
             Logger.getLogger("Error");
@@ -144,8 +145,8 @@ public class LaboratorioController {
         mav.setViewName("Laboratorio/LaboratorioEditar");
         try {
             Registry registry = LocateRegistry.getRegistry("localhost", 8000);
-            DefinicionComponenteMaterial definicionMaterial = (DefinicionComponenteMaterial) registry.lookup("material");
-            String response[] = definicionMaterial.consultaIndividual(id);
+            DefinicionComponentePersistencia definicionPersistencia = (DefinicionComponentePersistencia) registry.lookup("persistencia");
+            String response[] = definicionPersistencia.ConsultaIndividualLab(id);
             String idExist = response[0];
             System.out.print("LLega bien hasta aca");
             int idExist2 = Integer.parseInt(idExist);
@@ -176,8 +177,8 @@ public class LaboratorioController {
         mav.setViewName("Laboratorio/LaboratorioEditarExito");
         try {
             Registry registry = LocateRegistry.getRegistry("localhost", 8000);
-            DefinicionComponenteMaterial definicionMaterial = (DefinicionComponenteMaterial) registry.lookup("material");
-            String response = definicionMaterial.Actualizar(
+            DefinicionComponentePersistencia definicionPersistencia = (DefinicionComponentePersistencia) registry.lookup("persistencia");
+            String response = definicionPersistencia.ActualizarLab(
                     id, lab.getTipoFabricacion(),
                     lab.getUso(), lab.getFormaPresentacion()
             );

@@ -87,11 +87,11 @@
                     </div>
                     <div class="col-md-3">
                         <figure class="figure">
-                            <img src="<c:url value="/public/img/400x300_2.jpg"/>" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                            <img src="<c:url value="/public/img/400x300_6.jpg"/>" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
                             <figcaption class="figure-caption">A caption for the above image.</figcaption>
                         </figure>
-                        <h2>Ver protocolos almacenados en la web</h2>
-                        <p><a class="btn btn-outline-success" href="#" role="button">Ir al modulo &raquo;</a></p>
+                        <h2>Acceder al modulo de Tar</h2>
+                        <p><a class="btn btn-outline-success" href="<c:url value="Tars.htm"/>" role="button">Ir al modulo &raquo;</a></p>
                     </div>
                 </div>
 
@@ -103,13 +103,12 @@
                 <div class="row">
                     <div class="col-md-3">
                         <figure class="figure">
-                            <img src="<c:url value="/public/img/400x300_4.jpg"/>" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                            <img src="<c:url value="/public/img/400x300_2.jpg"/>" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
                             <figcaption class="figure-caption">A caption for the above image.</figcaption>
                         </figure>
-                        <h2>Acceder al modulo de Tar</h2>
-                        <p><a class="btn btn-outline-success" href="<c:url value="Tars.htm"/>" role="button">Ir al modulo &raquo;</a></p>
+                        <h2>Ver protocolos almacenados en la web</h2>
+                        <p><a class="btn btn-outline-success" href="#" role="button">Ir al modulo &raquo;</a></p>
                     </div>
-                    
                 </div>
 
                 <hr>

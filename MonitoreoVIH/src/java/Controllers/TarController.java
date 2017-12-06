@@ -6,6 +6,7 @@ import Modelos.ExistenciaMaterialMedico;
 import Modelos.Laboratorio;
 import Modelos.TAR;
 import componentes.DefinicionComponenteMaterial;
+import componentes.DefinicionComponentePersistencia;
 import componentes.DefinicionComponenteTar;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -70,9 +71,9 @@ public class TarController {
                 mav.setViewName("Tar/TarAdd");
                 try {
                     Registry registry = LocateRegistry.getRegistry("localhost", 8000);
-                    DefinicionComponenteTar definicionTar = (DefinicionComponenteTar) registry.lookup("tar");
+                    DefinicionComponentePersistencia definicionPersistencia = (DefinicionComponentePersistencia) registry.lookup("persistencia");
                     
-                    String response = definicionTar.insertartar(
+                    String response = definicionPersistencia.InsertarTar(
                             existencia.getId(), existencia.getCodigo(), existencia.getFechaConteo(), 
                             existencia.getCantidadExistencia(), existencia.getCantidadFaltante(), existencia.getObservacion(),
                             tar.getId(), tar.getIdLineaNivel(), tar.getNombreComercial(),tar.getAccionFarmacologica()
@@ -114,8 +115,8 @@ public class TarController {
         mav.setViewName("Tar/TarVer");
         try {
             Registry registry = LocateRegistry.getRegistry("localhost", 8000);
-            DefinicionComponenteTar definicionTar = (DefinicionComponenteTar) registry.lookup("tar");
-            String response[] = definicionTar.consultaIndividual(id);
+            DefinicionComponentePersistencia definicionPersistencia = (DefinicionComponentePersistencia) registry.lookup("persistencia");
+            String response[] = definicionPersistencia.ConsultaIndividualTar(id);
             mav.addObject("respuesta", response);
         } catch (Exception ex) {
             Logger.getLogger("Error");
@@ -133,8 +134,8 @@ public class TarController {
         //LLAMAR AL COMPONENTE PARA QUE ELIMINE
         try {
             Registry registry = LocateRegistry.getRegistry("localhost", 8000);
-            DefinicionComponenteTar definicionTar = (DefinicionComponenteTar) registry.lookup("tar");
-            String respuesta = definicionTar.Eliminar(id);
+            DefinicionComponentePersistencia definicionPersistencia = (DefinicionComponentePersistencia) registry.lookup("persistencia");
+            String respuesta = definicionPersistencia.EliminarTar(id);
             mav.addObject("respuestaEliminar", respuesta);
         } catch (Exception ex) {
             Logger.getLogger("Error");
@@ -154,8 +155,8 @@ public class TarController {
         mav.addObject("lineas",datoslineas);
         try {
             Registry registry = LocateRegistry.getRegistry("localhost", 8000);
-            DefinicionComponenteTar definicionTar = (DefinicionComponenteTar) registry.lookup("tar");
-            String response[] = definicionTar.consultaIndividual(id);
+            DefinicionComponentePersistencia definicionPersistencia = (DefinicionComponentePersistencia) registry.lookup("persistencia");
+            String response[] = definicionPersistencia.ConsultaIndividualTar(id);
             String nombre = response[0];
             String accion = response[1];
             String idTar = response[2];
@@ -186,8 +187,8 @@ public class TarController {
         mav.setViewName("Tar/TarEditarExito");
         try {
             Registry registry = LocateRegistry.getRegistry("localhost", 8000);
-            DefinicionComponenteTar definicionTar = (DefinicionComponenteTar) registry.lookup("tar");
-            String response = definicionTar.Actualizar(
+            DefinicionComponentePersistencia definicionPersistencia = (DefinicionComponentePersistencia) registry.lookup("persistencia");
+            String response = definicionPersistencia.ActualizarTar(
                     id, tar.getNombreComercial(),
                     tar.getAccionFarmacologica(), tar.getIdLineaNivel()
             );
