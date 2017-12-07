@@ -21,26 +21,24 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="<c:out value="index.htm"/>">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="PlanificacionPanel.htm">Planes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
+                        <a class="nav-link" href="Personals.htm">Personal</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown01">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Laboratorios.htm">Material laboratorio</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Tars.htm">Material TAR</a>
+                    </li>
+                    
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="text" placeholder="Digite" aria-label="Search">
@@ -67,7 +65,7 @@
                             <figcaption class="figure-caption">A caption for the above image.</figcaption>
                         </figure>
                         <h2>Acceder al modulo de Planificaciones</h2>
-                        <p><a class="btn btn-outline-success" href="#" role="button">Ir al modulo &raquo;</a></p>
+                        <p><a class="btn btn-outline-success" href="PlanificacionPanel.htm" role="button">Ir al modulo &raquo;</a></p>
                     </div>
                     <div class="col-md-3">
                         <figure class="figure">

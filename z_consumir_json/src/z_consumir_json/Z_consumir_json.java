@@ -29,7 +29,6 @@ public class Z_consumir_json {
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/json");
-
             if (conn.getResponseCode() == 200) {
                 BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
                 String output;
@@ -41,13 +40,17 @@ public class Z_consumir_json {
                     for (int i = 0; i < jsonarray.length(); i++) {
                         JSONObject jsonobject = jsonarray.getJSONObject(i);
                         String id = jsonobject.getString("id");
-                        System.out.print("\nID: "+id);
-                        String area = jsonobject.getString("area");
-                        System.out.print("\tArea: "+area);
-                        String personal = jsonobject.getString("personal");
-                        System.out.print("\tPersonal disponible: "+personal);
-                        String porcentaje = jsonobject.getString("porcentaje");
-                        System.out.print("\tPorcentaje: "+porcentaje);
+                        System.out.print("\n ID: "+id);
+                        String protocolo = jsonobject.getString("protocolo");
+                        System.out.print("\t Protocolo: "+protocolo);
+                        String norma = jsonobject.getString("norma");
+                        System.out.print("\t Norma: "+norma);
+                        String instructivo = jsonobject.getString("instructivo");
+                        System.out.print("\t Instructivo: "+instructivo);
+                        String base = jsonobject.getString("base");
+                        System.out.print("\t Base: "+base);
+                        String cantidad = jsonobject.getString("cantidad");
+                        System.out.print("\t Cantidad: "+cantidad);
                     }
                 }
             }

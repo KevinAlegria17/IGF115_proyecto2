@@ -41,6 +41,11 @@
                 <prop key="PersonalEditar.htm">PersonalController</prop>
                 <prop key="PersonalAdd.htm">PersonalController</prop>
                 
+                <prop key="PlanificacionPanel.htm">PlanificacionController</prop>
+                
+                <prop key="Compras.htm">CompraController</prop>
+                <prop key="CompraAdd.htm">CompraController</prop>
+                
                 
                 
             </props>
@@ -59,8 +64,10 @@
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
     
-    <bean name="LaboratorioController" class="Controllers.LaboratorioController"/>
-    <bean name="TarController" class="Controllers.TarController"/>
-    <bean name="PersonalController" class="Controllers.PersonalController"/>
+    <bean name="LaboratorioController" class="Controllers.Laboratorio.LaboratorioController"/>
+    <bean name="TarController" class="Controllers.TAR.TarController"/>
+    <bean name="PersonalController" class="Controllers.Personal.PersonalController"/>
+    <bean name="PlanificacionController" class="Controllers.Planificacion.PlanificacionController"/>
+    <bean name="CompraController" class="Controllers.Planificacion.CompraController"/>
 
 </beans>
