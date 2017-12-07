@@ -52,13 +52,24 @@
 
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron">
-                <div class="container">
+                <div class="container" style="text-align: center">
                     <h1 class="display-4">Mostrando informacion sobre personal de area...</h1>
                     <br><br>
-                    <div style="text-align: center">
-                        <div>
-                            <a href="<c:url value="/PersonalAdd.htm"/>" class="btn btn-outline-primary">Añadir informacion de Personal</a>
-                            <br><br>
+                    <a href="<c:url value="/PersonalAdd.htm"/>" class="btn btn-outline-primary">Añadir informacion de Personal</a>
+                    <br><br>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <br>
+                            <h3><c:out value="${respJson}"/></h3>
+                            <br>
+                            <br>
+                            <a href="<c:url value="/ProtocoloActualizar.htm"/>" class="btn btn-outline-dark">Actualizar protocolos</a>
+                            <br>
+                            <br>
+                            <a href="<c:url value="/Protocolos.htm"/>" class="btn btn-outline-dark">Ver protocolos</a>
+                    
+                        </div>
+                        <div class="col-md-9" style="text-align: center">
                             <table class="table table-bordered table-dark">
                                 <thead class="thead-dark">
                                     <tr>
@@ -97,8 +108,11 @@
                             </div>
                         </div>
                         <br><br>
-                        <p><a class="btn btn-outline-success btn-lg" href="<c:out value="index.htm"/>" role="button">Regresar a la pagina principal </a></p>
+                        
                     </div>
+                            
+                            <p ><a  class="btn btn-outline-success btn-lg" href="<c:out value="index.htm"/>" role="button">Regresar a la pagina principal </a></p>
+                            
                 </div>
             </div>
         </main><!-- Principal -->

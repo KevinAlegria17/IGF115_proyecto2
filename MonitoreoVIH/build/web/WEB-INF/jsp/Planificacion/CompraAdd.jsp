@@ -32,7 +32,7 @@
                         <a class="nav-link" href="PlanificacionPanel.htm">Planes</a>
                     </li>
                     <li class="nav-item " >
-                        <a class="nav-link" href="Personals.htm">Personal</a>
+                        <a class="nav-link" href="Personals.htm">Protocolos y Personal</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Laboratorios.htm">Material laboratorio</a>
@@ -64,6 +64,17 @@
                 <form:form method="POST" commandName="compra" >
                     <div class="row">
                         <div class="col-md-3">
+                                <div style="text-align: center">
+                                    
+                                        <h3><c:out value="${valores[0]}"/></h3>
+                                        <h3><c:out value="${valores[1]}"/></h3>
+                             
+                                    
+                                <br><br><br>
+                                <p><a class="btn btn-success btn-lg" href="<c:out value="Compras.htm"/>" role="button">Regresar </a></p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
                              <p>
                                 <form:label path="idPlanificacion">Identificador de la planificacion</form:label><br>
                                 <form:input path="idPlanificacion" />
@@ -94,16 +105,8 @@
                             <form:button class="btn btn-primary">Crear Plan</form:button>
 
                         </div>
-                        <div class="col-md-3">
-                                <div style="text-align: center">
-                                    <h2>Hacen falta</h2>
-                                    <h3><c:out value="${valor}"/></h3>
-                                <br><br><br>
-                                <p><a class="btn btn-success btn-lg" href="<c:out value="Compras.htm"/>" role="button">Regresar </a></p>
-                            </div>
-                        </div>
                             <div class="col-md-3">
-                                <h1><c:out value="${respuesta}"/></h1>
+                                <h3><c:out value="${respuesta}"/></h3>
                             </div>
                     </div>
                 </form:form>

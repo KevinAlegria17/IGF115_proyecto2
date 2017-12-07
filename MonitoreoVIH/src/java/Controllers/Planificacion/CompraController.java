@@ -6,10 +6,9 @@
 package Controllers.Planificacion;
 
 import Modelos.Conectar;
-import componentes.DefinicionComponenteMaterial;
 import componentes.DefinicionComponentePlan;
 import componentes.Planificacion.Compra;
-import componentes.Laboratorio.ExistenciaMaterialMedico;
+import componentes.Existencia.ExistenciaMaterialMedico;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -74,7 +73,7 @@ public class CompraController {
     public ModelAndView Compras() {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Planificacion/Compras");
-        String sql = "select * from existenciamaterialmedico";
+        String sql = "select * from existenciamaterialmedico ORDER BY FECHACONTEO DESC";
         List<String> materialeserror = new ArrayList<>();
         List materiales = null;
         try{
@@ -96,7 +95,7 @@ public class CompraController {
         ModelAndView mav = new ModelAndView();
         int id = Integer.parseInt(request.getParameter("id"));
         ExistenciaMaterialMedico material = selectMaterial(id);
-        
+        String valores[] = new String[2];
         int valor=0;
         try {
             String webservice = "http://localhost/JSON_IGF115_Proyecto1/consulta.php";
@@ -116,7 +115,13 @@ public class CompraController {
                         if((jsonobject.getString("protocolo")).equals(material.getNombreMaterial())){
                             int cantidadProtocolo = Integer.parseInt(jsonobject.getString("cantidad"));
                             if(material.getCantidadExistencia()<cantidadProtocolo){
+                                valor = cantidadProtocolo - material.getCantidadExistencia();
+                                valores[0]="Hacen falta";
+                                valores[1]=Integer.toString(valor);
+                            }else{
                                 valor = material.getCantidadExistencia() - cantidadProtocolo;
+                                valores[0]="Sobran";
+                                valores[1]=Integer.toString(valor);
                             }
                         }
                     }
@@ -127,7 +132,7 @@ public class CompraController {
             System.out.println("Error al leer el JSON");
         }
         mav.setViewName("Planificacion/CompraAdd");
-        mav.addObject("valor", valor);
+        mav.addObject("valores", valores);
         mav.addObject("compra", new Compra());
         
         return mav;

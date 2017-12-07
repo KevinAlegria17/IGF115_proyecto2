@@ -31,7 +31,7 @@
                         <a class="nav-link" href="PlanificacionPanel.htm">Planes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Personals.htm">Personal</a>
+                        <a class="nav-link" href="Personals.htm">Protocolos y Personal</a>
                     </li>
                     <li class="nav-item" >
                         <a class="nav-link" href="Laboratorios.htm">Material laboratorio</a>

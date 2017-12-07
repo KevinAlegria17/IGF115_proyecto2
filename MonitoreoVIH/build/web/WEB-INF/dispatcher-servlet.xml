@@ -64,9 +64,9 @@
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
     
-    <bean name="LaboratorioController" class="Controllers.Laboratorio.LaboratorioController"/>
-    <bean name="TarController" class="Controllers.TAR.TarController"/>
-    <bean name="PersonalController" class="Controllers.Personal.PersonalController"/>
+    <bean name="LaboratorioController" class="Controllers.Existencia.LaboratorioController"/>
+    <bean name="TarController" class="Controllers.Existencia.TarController"/>
+    <bean name="PersonalController" class="Controllers.Protocolo.PersonalController"/>
     <bean name="PlanificacionController" class="Controllers.Planificacion.PlanificacionController"/>
     <bean name="CompraController" class="Controllers.Planificacion.CompraController"/>
 

@@ -14,4 +14,5 @@ public interface DefinicionComponentePersonal extends Remote{
     
     public String Actualizar(int id, String area, int cantidad_personal, int porcentaje) throws RemoteException;
 
+    public String verficarJson()throws RemoteException;
 }

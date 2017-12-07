@@ -29,8 +29,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="PlanificacionPanel.htm">Planes</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Personals.htm">Personal</a>
+                    <li class="nav-item " >
+                        <a class="nav-link" href="Personals.htm">Protocolos y Personal</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Laboratorios.htm">Material laboratorio</a>
@@ -52,7 +52,7 @@
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron">
                 <div class="container">
-                    <h1 class="display-3">Hola, Bienvenido al sistema de monitoreo del VIH!</h1>
+                    <h1 class="display-4">Bienvenido al sistema de monitoreo del VIH!</h1>
                 </div>
             </div>
 
@@ -69,10 +69,10 @@
                     </div>
                     <div class="col-md-3">
                         <figure class="figure">
-                            <img src="<c:url value="/public/img/400x300_5.jpg"/>" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                            <img src="<c:url value="/public/img/400x300_2.jpg"/>" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
                             <figcaption class="figure-caption">A caption for the above image.</figcaption>
                         </figure>
-                        <h2>Acceder a la gestion de personal</h2>
+                        <h2>Acceder a gestion de protocolos y personal</h2>
                         <p><a class="btn btn-outline-success" href="Personals.htm" role="button">Ir al modulo &raquo;</a></p>
                     </div>
                     <div class="col-md-3">
@@ -88,31 +88,14 @@
                             <img src="<c:url value="/public/img/400x300_6.jpg"/>" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
                             <figcaption class="figure-caption">A caption for the above image.</figcaption>
                         </figure>
-                        <h2>Acceder al modulo de Tar</h2>
+                        <h2>Ver Materiales TAR</h2>
                         <p><a class="btn btn-outline-success" href="<c:url value="Tars.htm"/>" role="button">Ir al modulo &raquo;</a></p>
                     </div>
                 </div>
 
                 <hr>
-
             </div> <!-- /container -->
-            <div class="container">
-                <!-- Example row of columns -->
-                <div class="row">
-                    <div class="col-md-3">
-                        <figure class="figure">
-                            <img src="<c:url value="/public/img/400x300_2.jpg"/>" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-                            <figcaption class="figure-caption">A caption for the above image.</figcaption>
-                        </figure>
-                        <h2>Ver protocolos almacenados en la web</h2>
-                        <p><a class="btn btn-outline-success" href="#" role="button">Ir al modulo &raquo;</a></p>
-                    </div>
-                </div>
-
-                <hr>
-
-            </div>
-
+            
         </main>
 
         <footer class="container">

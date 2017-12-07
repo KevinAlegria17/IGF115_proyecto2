@@ -31,7 +31,9 @@ public class Z_consumir_json {
             conn.setRequestProperty("Accept", "application/json");
             if (conn.getResponseCode() == 200) {
                 BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
-                String output;
+                String output = br.readLine();
+                
+                System.out.println("ESTE ES EL PUTPUT PUTOS"+output);
                 System.out.println("output is --------");
                 while ((output = br.readLine()) != null) {
                     System.out.println(output);
