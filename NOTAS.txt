@@ -1,0 +1,20 @@
+LA BASE DE DATOS SE HA MANEJADO CON PHPMYADMIN EN MYSQL, 
+EN BASE A ESTO SE HAN CONFIGURADO ALGUNAS CLASES INTERNAS DE LOS PROYECTOS PARA QUE LA CONEXION SEA EXITOSA, LO QUE IMPLICA QUE LAS CREDENCIALES DE ACCESO A LA BASE PUEDAN SER DISTINTAS A LAS USADAS EN NUESTRAS PRUEBAS. DEBERAN CAMBIARSE SEGUN SE NECESITE.
+
+lA CONFIGURACION USADA ES LA SIGUIENTE:
+
+URL DE LA BASE DE DATOS: 	jdbc:mysql://localhost:3306/dbmonitoreovih
+USUARIO:			root
+PASSWORD:	
+
+(No hay password para entrar XD)
+
+El archivo sql 'dbmonitoreovih' tiene las tablas e informacion de prueba para mostrar registros en la aplicacion
+
+los archivos Jar son los utilizados en algunas aplicaciones para su correcto funcionamiento.
+Deberian de aparecer agregadas cada uno a la aplicacion que corresponde. 
+De no ser asi:
+	El Jar 'json-20160810' se agrega en las librerias de la aplicacion MonitoreoVIH
+	El Jar 'mysql-connector-java-5.0.8-bin' se agrega en las librerias de las siguientes 		
+		aplicaciones:
+			ComponenteExistencia, ComponentePlan, ComponenteProtocolo.
