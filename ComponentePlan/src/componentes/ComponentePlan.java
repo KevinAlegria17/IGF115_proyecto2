@@ -61,9 +61,9 @@ public class ComponentePlan implements DefinicionComponentePlan, Serializable{
             
             System.setProperty("java.rmi.server.hostname", InetAddress.getLocalHost().getHostAddress());
             
-            DefinicionComponentePlan definicionPlan = (DefinicionComponentePlan) UnicastRemoteObject.exportObject(plan, 8000);
+            DefinicionComponentePlan definicionPlan = (DefinicionComponentePlan) UnicastRemoteObject.exportObject(plan, 8002);
             
-            Registry registry = LocateRegistry.createRegistry(8000);
+            Registry registry = LocateRegistry.createRegistry(8002);
             registry.bind("plan", definicionPlan);
             
             System.out.print("Componente Planificacion esperando llamada");

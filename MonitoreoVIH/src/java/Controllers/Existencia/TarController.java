@@ -67,7 +67,7 @@ public class TarController {
                 ModelAndView mav = new ModelAndView();
                 mav.setViewName("Existencia/Tar/TarAdd");
                 try {
-                    Registry registry = LocateRegistry.getRegistry("localhost", 8000);
+                    Registry registry = LocateRegistry.getRegistry("localhost", 8001);
                     DefinicionComponenteExistencia definicionExistencia = (DefinicionComponenteExistencia) registry.lookup("existencia");
                     
                     String response = definicionExistencia.insertartar(
@@ -111,7 +111,7 @@ public class TarController {
         int id = Integer.parseInt(request.getParameter("id"));
         mav.setViewName("Existencia/Tar/TarVer");
         try {
-            Registry registry = LocateRegistry.getRegistry("localhost", 8000);
+            Registry registry = LocateRegistry.getRegistry("localhost", 8001);
             DefinicionComponenteExistencia definicionExistencia = (DefinicionComponenteExistencia) registry.lookup("existencia");
             String response[] = definicionExistencia.consultaIndividualTar(id);
             mav.addObject("respuesta", response);
@@ -130,7 +130,7 @@ public class TarController {
         mav.setViewName("Existencia/Tar/TarEliminar");
         //LLAMAR AL COMPONENTE PARA QUE ELIMINE
         try {
-            Registry registry = LocateRegistry.getRegistry("localhost", 8000);
+            Registry registry = LocateRegistry.getRegistry("localhost", 8001);
             DefinicionComponenteExistencia definicionExistencia = (DefinicionComponenteExistencia) registry.lookup("existencia");
             String respuesta = definicionExistencia.EliminarTar(id);
             mav.addObject("respuestaEliminar", respuesta);
@@ -151,7 +151,7 @@ public class TarController {
         List datoslineas = this.jdbcTemplate.queryForList(sqllin);
         mav.addObject("lineas",datoslineas);
         try {
-            Registry registry = LocateRegistry.getRegistry("localhost", 8000);
+            Registry registry = LocateRegistry.getRegistry("localhost", 8001);
             DefinicionComponenteExistencia definicionExistencia = (DefinicionComponenteExistencia) registry.lookup("existencia");
             String response[] = definicionExistencia.consultaIndividualTar(id);
             String nombre = response[0];
@@ -183,7 +183,7 @@ public class TarController {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Existencia/Tar/TarEditarExito");
         try {
-            Registry registry = LocateRegistry.getRegistry("localhost", 8000);
+            Registry registry = LocateRegistry.getRegistry("localhost", 8001);
             DefinicionComponenteExistencia definicionExistencia = (DefinicionComponenteExistencia) registry.lookup("existencia");
             String response = definicionExistencia.ActualizarTar(
                     id, tar.getNombreComercial(),

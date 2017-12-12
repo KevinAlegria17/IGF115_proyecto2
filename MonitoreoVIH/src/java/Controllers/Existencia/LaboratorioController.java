@@ -64,7 +64,7 @@ public class LaboratorioController {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Existencia/Laboratorio/LaboratorioAdd");
         try {
-            Registry registry = LocateRegistry.getRegistry("localhost", 8000);
+            Registry registry = LocateRegistry.getRegistry("localhost", 8001);
             DefinicionComponenteExistencia definicionExistencia = (DefinicionComponenteExistencia) registry.lookup("existencia");
 
             String response = definicionExistencia.insertarlab(
@@ -108,7 +108,7 @@ public class LaboratorioController {
         int id = Integer.parseInt(request.getParameter("id"));
         mav.setViewName("Existencia/Laboratorio/LaboratorioVer");
         try {
-            Registry registry = LocateRegistry.getRegistry("localhost", 8000);
+            Registry registry = LocateRegistry.getRegistry("localhost", 8001);
             DefinicionComponenteExistencia definicionExistencia = (DefinicionComponenteExistencia) registry.lookup("existencia");
             String response[] = definicionExistencia.consultaIndividualLab(id);
             mav.addObject("respuesta", response);
@@ -127,7 +127,7 @@ public class LaboratorioController {
         mav.setViewName("Existencia/Laboratorio/LaboratorioEliminar");
         //LLAMAR AL COMPONENTE PARA QUE ELIMINE
         try {
-            Registry registry = LocateRegistry.getRegistry("localhost", 8000);
+            Registry registry = LocateRegistry.getRegistry("localhost", 8001);
             DefinicionComponenteExistencia definicionExistencia = (DefinicionComponenteExistencia) registry.lookup("existencia");
             String respuesta = definicionExistencia.EliminarLab(id);
             mav.addObject("respuestaEliminar", respuesta);
@@ -145,7 +145,7 @@ public class LaboratorioController {
         int id = Integer.parseInt(request.getParameter("id"));
         mav.setViewName("Existencia/Laboratorio/LaboratorioEditar");
         try {
-            Registry registry = LocateRegistry.getRegistry("localhost", 8000);
+            Registry registry = LocateRegistry.getRegistry("localhost", 8001);
             DefinicionComponenteExistencia definicionExistencia = (DefinicionComponenteExistencia) registry.lookup("existencia");
             String response[] = definicionExistencia.consultaIndividualLab(id);
             String idExist = response[0];
@@ -177,7 +177,7 @@ public class LaboratorioController {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Existencia/Laboratorio/LaboratorioEditarExito");
         try {
-            Registry registry = LocateRegistry.getRegistry("localhost", 8000);
+            Registry registry = LocateRegistry.getRegistry("localhost", 8001);
             DefinicionComponenteExistencia definicionExistencia = (DefinicionComponenteExistencia) registry.lookup("existencia");
             String response = definicionExistencia.ActualizarLab(
                     id, lab.getTipoFabricacion(),

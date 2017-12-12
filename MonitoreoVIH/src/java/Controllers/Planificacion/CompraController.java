@@ -147,7 +147,7 @@ public class CompraController {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("Planificacion/CompraAdd");
         try {
-            Registry registry = LocateRegistry.getRegistry("localhost", 8000);
+            Registry registry = LocateRegistry.getRegistry("localhost", 8002);
             DefinicionComponentePlan definicionPlan = (DefinicionComponentePlan) registry.lookup("plan");
 
             String response = definicionPlan.insertarCompra(compra.getIdPlanificacion(),compra.getPeriodo(), compra.getFechaInicio(), compra.getFechaFin());

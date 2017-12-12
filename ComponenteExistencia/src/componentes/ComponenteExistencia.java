@@ -336,9 +336,9 @@ public class ComponenteExistencia implements DefinicionComponenteExistencia, Ser
             
             System.setProperty("java.rmi.server.hostname", InetAddress.getLocalHost().getHostAddress());
             
-            DefinicionComponenteExistencia definicionExistencia = (DefinicionComponenteExistencia) UnicastRemoteObject.exportObject(existencia, 8000);
+            DefinicionComponenteExistencia definicionExistencia = (DefinicionComponenteExistencia) UnicastRemoteObject.exportObject(existencia, 8001);
             
-            Registry registry = LocateRegistry.createRegistry(8000);
+            Registry registry = LocateRegistry.createRegistry(8001);
             registry.bind("existencia", definicionExistencia);
             
             System.out.print("Componente Existencias esperando llamada");
