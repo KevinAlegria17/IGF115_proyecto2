@@ -40,6 +40,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 public class CompraController {
     private JdbcTemplate jdbcTemplate;
+    String valores[] = new String[3];
     
     public CompraController() {
         this.jdbcTemplate =  new JdbcTemplate(Conectar.conectar());
@@ -95,7 +96,7 @@ public class CompraController {
         ModelAndView mav = new ModelAndView();
         int id = Integer.parseInt(request.getParameter("id"));
         ExistenciaMaterialMedico material = selectMaterial(id);
-        String valores[] = new String[2];
+        
         int valor=0;
         try {
             String webservice = "http://localhost/JSON_IGF115_Proyecto1/consulta.php";
@@ -114,14 +115,22 @@ public class CompraController {
                         JSONObject jsonobject = jsonarray.getJSONObject(i);
                         if((jsonobject.getString("protocolo")).equals(material.getNombreMaterial())){
                             int cantidadProtocolo = Integer.parseInt(jsonobject.getString("cantidad"));
+                            if(material.getCantidadExistencia() == cantidadProtocolo){
+                                valor = 0;
+                                valores[0]="No hacen falta materiales ";
+                                valores[1]=Integer.toString(valor);
+                                valores[2]=jsonobject.getString("precio");
+                            }
                             if(material.getCantidadExistencia()<cantidadProtocolo){
                                 valor = cantidadProtocolo - material.getCantidadExistencia();
                                 valores[0]="Hacen falta";
                                 valores[1]=Integer.toString(valor);
+                                valores[2]=jsonobject.getString("precio");
                             }else{
                                 valor = material.getCantidadExistencia() - cantidadProtocolo;
                                 valores[0]="Sobran";
                                 valores[1]=Integer.toString(valor);
+                                valores[2]=jsonobject.getString("precio");
                             }
                         }
                     }
@@ -157,6 +166,13 @@ public class CompraController {
             String respuesta = "Servicio no disponible \n" + ex.toString();
             mav.addObject("respuesta", respuesta);
         }
+        
+        int Id=Integer.parseInt(request.getParameter("id"));
+            this.jdbcTemplate.update(
+                    "update existenciamaterialmedico set CANTIDADFALTANTE=? WHERE ID_EXIST=?",
+                    valores[1], Id
+            );
+        
         return mav;
     }
 }

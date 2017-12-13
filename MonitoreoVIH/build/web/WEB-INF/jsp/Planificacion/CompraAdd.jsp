@@ -82,8 +82,8 @@
 
                             </p>
                             <p>
-                                <form:label path="periodo">Periodo:</form:label><br>
-                                <form:input path="periodo" />
+                                <form:label path="periodo">Gasto</form:label><br>
+                                <form:input path="periodo" disabled="" value="${valores[1]*valores[2]}"/>
                                 <form:errors path="periodo" element="div" cssClass="alert alert-danger"/>
 
                             </p>
@@ -102,7 +102,13 @@
 
                             </p>
                             <hr/>
-                            <form:button class="btn btn-primary">Crear Plan</form:button>
+                            <c:set var = "faltante" scope = "session" value = "${valores[1]}"/>
+                            <c:if test = "${faltante == 0}">
+                               <form:button class="btn btn-primary" disabled="true">Crear Plan</form:button>
+                            </c:if>
+                            <c:if test = "${faltante != 0}">
+                               <form:button class="btn btn-primary">Crear Plan</form:button>
+                            </c:if>
 
                         </div>
                             <div class="col-md-3">

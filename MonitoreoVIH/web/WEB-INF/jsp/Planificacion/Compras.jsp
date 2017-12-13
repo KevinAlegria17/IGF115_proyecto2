@@ -57,7 +57,6 @@
                     <br><br>
                     <div style="text-align: center">
                         <div>
-                            <a href="<c:url value=""/>" class="btn btn-outline-primary">Añadir informacion de Personal</a>
                             <br><br>
                             <table class="table table-bordered table-dark">
                                 <thead class="thead-dark">
